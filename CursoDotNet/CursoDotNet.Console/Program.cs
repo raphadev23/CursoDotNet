@@ -1,4 +1,6 @@
-﻿internal class Program
+﻿using CursoDotNet.Model.TiposDeDados;
+
+internal class Program
 {
     private static void Main(string[] args)
     {
@@ -87,35 +89,60 @@
         // if((DateTime.Now.DayOfWeek == DayOfWeek.Thursday) && (DateTime.Now.DayOfWeek != DayOfWeek.Tuesday))
         //     Console.WriteLine("hoje é quinta feira ");
 
-        Console.WriteLine("Qual é a sua data de nascimento?");
-        var nascimento = Console.ReadLine();
-        var dataNascimento = DateTime.Parse(nascimento);
+        //Console.WriteLine("Qual é a sua data de nascimento?");
+        //var nascimento = Console.ReadLine();
+        //var dataNascimento = DateTime.Parse(nascimento);
 
 
-        switch (dataNascimento.DayOfWeek)
-        {
-            case DayOfWeek.Sunday:
-                Console.WriteLine("VocÊ nasceu no(a) Domingo!");
-                break;
-            case DayOfWeek.Monday:
-                Console.WriteLine("VocÊ nasceu no(a)Segunda!");
-                break;
-            case DayOfWeek.Tuesday:
-                Console.WriteLine("VocÊ nasceu no(a) Terça!");
-                break;
-            case DayOfWeek.Wednesday:
-                Console.WriteLine("VocÊ nasceu no(a) quarta!");
-                break;
-            case DayOfWeek.Thursday:
-                Console.WriteLine("VocÊ nasceu no(a) Quinta!");
-                break;
-            case DayOfWeek.Friday:
-                Console.WriteLine("VocÊ nasceu no(a)Sexta!");
-                break;
-            case DayOfWeek.Saturday:
-                Console.WriteLine("VocÊ nasceu no(a) Sabado!");
-                break;
-        }
+        //switch (dataNascimento.DayOfWeek)
+        //{
+        //    case DayOfWeek.Sunday:
+        //        Console.WriteLine("VocÊ nasceu no(a) Domingo!");
+        //        break;
+        //    case DayOfWeek.Monday:
+        //        Console.WriteLine("VocÊ nasceu no(a)Segunda!");
+        //        break;
+        //    case DayOfWeek.Tuesday:
+        //        Console.WriteLine("VocÊ nasceu no(a) Terça!");
+        //        break;
+        //    case DayOfWeek.Wednesday:
+        //        Console.WriteLine("VocÊ nasceu no(a) quarta!");
+        //        break;
+        //    case DayOfWeek.Thursday:
+        //        Console.WriteLine("VocÊ nasceu no(a) Quinta!");
+        //        break;
+        //    case DayOfWeek.Friday:
+        //        Console.WriteLine("VocÊ nasceu no(a)Sexta!");
+        //        break;
+        //    case DayOfWeek.Saturday:
+        //        Console.WriteLine("VocÊ nasceu no(a) Sabado!");
+        //        break;
+        //}
+
+        var palavra = Caracteres.LetrasMaiusculas();
+
+        Console.WriteLine(palavra);
+
+        var palavra2 = Caracteres.LetrasMinusculas();
+        Console.WriteLine(palavra2);
+
+        var comparacao = Caracteres.Eigual();
+        Console.WriteLine(comparacao);
+
+        Console.WriteLine(Caracteres.ExtrairPartes());
+
+        var nome = "Larissa de Miranda";
+        var posicao = 8;
+
+        var letra = Caracteres.ExtrairCaractere(nome,posicao);
+        Console.WriteLine($"o caractere da posição {posicao} da string {nome} é" +
+            $"" +
+            $" {letra}");
+
+        var resultado = Numeros.Calcular(Operacao.soma, 4, 6);
+        Console.WriteLine($"o resultado da operação soma é {resultado}");
+        resultado = Numeros.Calcular(Operacao.divisao, 4, 0);
+        Console.WriteLine($"o resultado da operação divisão, é {resultado}");
 
     }
 }
